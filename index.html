@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Demo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="game-container">
+        <div class="window-title-bar">
+            <div class="window-title-icon"></div>
+            <div class="window-title">★ 2000Damage 2D pre-alpha 0.001 ★</div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="menu">
+            <select id="spriteSelect">
+                <option value="assets/remilia.png">Remilia</option>
+                <option value="assets/cirno.png">Cirno</option>
+                <option value="assets/marisa.png">Marisa</option>
+                <option value="assets/patchouli.png">Patchouli</option>
+            </select>
+            <label for="debugToggle">
+                <input type="checkbox" id="debugToggle"> Debug
+            </label>
+        </div>
+        <div id="debugInfo" class="debug-info"></div>
+        <div id="inputQueue" class="input-queue"></div>
+    </div>
+    <script src="js/matrix.js" type="module"></script>
+    <script type="module">
+        import { createAndStartGame } from './js/game.js';
+        document.addEventListener('DOMContentLoaded', createAndStartGame);
+    </script>
+</body>
+</html>
